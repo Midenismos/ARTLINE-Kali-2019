@@ -1,0 +1,824 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Eventsheet_LD_MODEL</name>
+    <events>
+        <variable constant="0" name="bestDistance" sid="829724000333000" static="0" type="number">500000000000</variable>
+        <variable constant="0" name="DezoomElapsedTime" sid="318526183835100" static="0" type="number">0</variable>
+        <variable constant="0" name="DezoomSpeedY" sid="639892867794458" static="0" type="number">0</variable>
+        <variable constant="0" name="DezoomSpeedX" sid="310669849959296" static="0" type="number">0</variable>
+        <variable constant="1" name="Initial_Canvas_Height" sid="405019007488015" static="0" type="number">1250</variable>
+        <variable constant="1" name="Initial_Canvas_Width" sid="380220634857288" static="0" type="number">2500</variable>
+        <variable constant="1" name="Dezoom_Duration" sid="567267852483651" static="0" type="number">180</variable>
+        <event-block sid="398190425274723">
+            <conditions>
+                <condition id="-18" name="On created" sid="856501815535250" type="AnimationStatesBloc" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="412297467722112">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="484867740705150" type="AnimationStatesBloc">
+                            <param id="0" name="Instance variable">isBlack</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="838903575008494" type="AnimationStatesBloc">
+                            <param id="0" name="Animation">&quot;WhiteToBlack&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="Solid" id="0" name="Set enabled" sid="852796100350371" type="AnimationStatesBloc">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="975505387628066">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="650844972829858" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="948495392299723" type="AnimationStatesBloc">
+                            <param id="0" name="Animation">&quot;BlackToWhite&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="Solid" id="0" name="Set enabled" sid="507317474745776" type="AnimationStatesBloc">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="359949599246593">
+                    <conditions />
+                    <actions>
+                        <action id="2" name="Stop" sid="587522498710425" type="AnimationStatesBloc" />
+                        <action id="5" name="Set frame" sid="299322096313079" type="AnimationStatesBloc">
+                            <param id="0" name="Frame number">AnimationStatesBloc.AnimationFrameCount - 1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="361946605034474">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="492316394282145" type="System" />
+            </conditions>
+            <actions>
+                <action disabled="1" id="-3" name="Set position" sid="106235401102133" type="Shockwave">
+                    <param id="0" name="X">Player.X</param>
+                    <param id="1" name="Y">Player.Y</param>
+                </action>
+                <action id="-4" name="Set position to another object" sid="530675705382407" type="Revealer">
+                    <param id="0" name="Object">Player</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="502365315551436">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="203224006031627" type="Keyboard">
+                    <param id="0" name="Key">97</param>
+                </condition>
+                <condition id="3" name="Compare frame" sid="377243775162256" type="AnimationStatesBloc">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Number">AnimationStatesBloc.AnimationFrameCount -1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action disabled="1" id="3" name="Start" sid="203233263384648" type="Shockwave">
+                    <param id="0" name="From">1</param>
+                </action>
+                <action disabled="1" id="-15" name="Set visible" sid="815161649962472" type="Shockwave">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action disabled="1" id="11" name="Set collisions enabled" sid="339547665629974" type="Shockwave">
+                    <param id="0" name="Collisions">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="527716220176357">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="519461717816455" type="AnimationStatesBloc">
+                            <param id="0" name="Instance variable">isBlack</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="898565779358139" type="AnimationStatesBloc">
+                            <param id="0" name="Animation">&quot;BlackToWhite&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="Solid" id="0" name="Set enabled" sid="520082119626819" type="AnimationStatesBloc">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="602746247069389">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="957328156721128" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="210452315027370" type="AnimationStatesBloc">
+                            <param id="0" name="Animation">&quot;WhiteToBlack&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="Solid" id="0" name="Set enabled" sid="799821497499000" type="AnimationStatesBloc">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="664744980878185">
+                    <conditions />
+                    <actions>
+                        <action id="-14" name="Toggle boolean" sid="153392396839170" type="AnimationStatesBloc">
+                            <param id="0" name="Instance variable">isBlack</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="247223813893526">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="782677799747692" type="AnimationStatesBloc">
+                            <param id="0" name="Instance variable">isBlack</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="370023284262200">
+            <conditions>
+                <condition id="5" name="On any finished" sid="921897237396259" type="Shockwave" />
+            </conditions>
+            <actions>
+                <action disabled="1" id="11" name="Set collisions enabled" sid="946392282443337" type="Shockwave">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+                <action disabled="1" id="-15" name="Set visible" sid="342641137786743" type="Shockwave">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="467357586869783">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="762391228949792" type="AnimationStatesBloc">
+                    <param id="0" name="Object">Shockwave</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="737142359679262">
+                    <conditions />
+                    <actions />
+                </event-block>
+                <event-block sid="126787981701247">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="443207026434581" type="System" />
+                    </conditions>
+                    <actions />
+                </event-block>
+                <event-block sid="481163361801798">
+                    <conditions />
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="4026573547797972">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="3788478228230203" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">UnmovingBrick</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="5250777324939414" type="Player">
+                    <param id="0" name="Instance variable">IsGrappling</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-10" name="Set value" sid="4237772455540259" type="Player">
+                    <param id="0" name="Instance variable">grapplingPointX</param>
+                    <param id="1" name="Value">UnmovingBrick.X</param>
+                </action>
+                <action id="-10" name="Set value" sid="3915579961726763" type="Player">
+                    <param id="0" name="Instance variable">grapplingPointY</param>
+                    <param id="1" name="Value">UnmovingBrick.Y</param>
+                </action>
+                <action behavior="Platform" id="5" name="Set gravity" sid="9783970624270149" type="Player">
+                    <param id="0" name="Gravity">0</param>
+                </action>
+                <action behavior="Platform" id="9" name="Set vector Y" sid="3004816515438071" type="Player">
+                    <param id="0" name="Vector Y">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3751500281043761">
+            <conditions>
+                <condition id="3" name="On button released" sid="3926702235226217" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="9087600357574552" type="OLD_MovingBrick">
+                    <param id="0" name="Instance variable">isGrabbed</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action behavior="Platform" id="5" name="Set gravity" sid="7325172480404154" type="OLD_MovingBrick">
+                    <param id="0" name="Gravity">OLD_MovingBrick.desiredGravity</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="7072915132521962">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="4571197739017756" type="Player">
+                            <param id="0" name="Instance variable">IsGrappling</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="7002667224605124" type="Player">
+                            <param id="0" name="Instance variable">IsGrappling</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action behavior="Platform" id="5" name="Set gravity" sid="7105394165970614" type="Player">
+                            <param id="0" name="Gravity">Player.desiredGravity</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="5686283796434156">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="1016136389341573" type="Player">
+                                    <param id="0" name="Instance variable">IsWhite</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="4530509732079442" type="Player">
+                                    <param id="0" name="Vector X">((Player.grapplingPointX - Player.X) / distance(Player.X, Player.Y, Player.grapplingPointX, Player.grapplingPointY)) * 900</param>
+                                </action>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="5378946686665257" type="Player">
+                                    <param id="0" name="Vector Y">((Player.grapplingPointY - Player.Y) / distance(Player.X, Player.Y, Player.grapplingPointX, Player.grapplingPointY)) * 600</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1942846382099435">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="169462641969503" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="4768283371213212" type="Player">
+                                    <param id="0" name="Vector X">((Player.X - Player.grapplingPointX ) / distance(Player.X, Player.Y, Player.grapplingPointX, Player.grapplingPointY)) * 900</param>
+                                </action>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="8539855417753567" type="Player">
+                                    <param id="0" name="Vector Y">((Player.Y - Player.grapplingPointY ) / distance(Player.X, Player.Y, Player.grapplingPointX, Player.grapplingPointY)) * 600</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="6494030194098224">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="3154811924297822" type="System" />
+                <condition id="-8" name="Is boolean instance variable set" sid="7109499118319444" type="Player">
+                    <param id="0" name="Instance variable">IsGrappling</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="4438589187715865">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="6204163328656958" type="Player">
+                            <param id="0" name="Instance variable">IsWhite</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-23" name="Move at angle" sid="4434205531698184" type="Player">
+                            <param id="0" name="Angle">angle(Player.X,Player.Y,Player.grapplingPointX,Player.grapplingPointY)</param>
+                            <param id="1" name="Distance">10</param>
+                        </action>
+                        <action id="14" name="Log" sid="6033001119949964" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;aaaa&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2481894284416044">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="6736700292636057" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-23" name="Move at angle" sid="6021147016623832" type="Player">
+                            <param id="0" name="Angle">angle(Player.grapplingPointX,Player.grapplingPointY,Player.X,Player.Y)</param>
+                            <param id="1" name="Distance">10</param>
+                        </action>
+                        <action id="14" name="Log" sid="3386908063446005" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;BBBB&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="615874962929047">
+            <conditions>
+                <condition id="-18" name="On created" sid="765132490271811" type="Player" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="2277953745043964" type="Player">
+                    <param id="0" name="Instance variable">desiredGravity</param>
+                    <param id="1" name="Value">Player.Platform.Gravity</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9236054444424033">
+            <conditions>
+                <condition id="-18" name="On created" sid="516840406142947" type="OLD_MovingBrick" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="329835297056171" type="OLD_MovingBrick">
+                    <param id="0" name="Instance variable">desiredGravity</param>
+                    <param id="1" name="Value">OLD_MovingBrick.Platform.Gravity</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7478159271779272">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="887484209864831" type="System" />
+                <condition behavior="Platform" id="2" name="Is on floor" sid="1857077160325207" type="Player" />
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="3" name="Set deceleration" sid="9341374067809009" type="Player">
+                    <param id="0" name="Deceleration">1000</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5420108119456007">
+            <conditions>
+                <condition id="-22" name="Else" sid="504002605184148" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="3" name="Set deceleration" sid="187938387899972" type="Player">
+                    <param id="0" name="Deceleration">50</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3159020988273522">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="9953325722828746" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">OLD_MovingBrick</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="3544125618131715" type="OLD_MovingBrick">
+                    <param id="0" name="Instance variable">isGrabbed</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action behavior="Platform" id="5" name="Set gravity" sid="704699796476158" type="OLD_MovingBrick">
+                    <param id="0" name="Gravity">0</param>
+                </action>
+                <action behavior="Platform" id="9" name="Set vector Y" sid="610707531685011" type="OLD_MovingBrick">
+                    <param id="0" name="Vector Y">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="5307030296207253">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="2315156934843704" type="Player">
+                            <param id="0" name="Instance variable">IsWhite</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="3209883418491377" type="OLD_MovingBrick">
+                            <param id="0" name="Instance variable">speed</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3673257861520106">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="5454662222062379" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="1286123673759418" type="OLD_MovingBrick">
+                            <param id="0" name="Instance variable">speed</param>
+                            <param id="1" name="Value">-5</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="4724781102935501">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="7811172113281606" type="OLD_MovingBrick">
+                    <param id="0" name="Instance variable">isGrabbed</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="8924889229963131">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="2165733476349843" type="System">
+                            <param id="0" name="First value">abs(Player.Y - OLD_MovingBrick.Y)</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">40</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="8207928086219724">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="5550777852411284" type="System">
+                                    <param id="0" name="First value">Player.X</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">OLD_MovingBrick.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="9678867740767456" type="OLD_MovingBrick">
+                                    <param id="0" name="Vector X">-OLD_MovingBrick.speed</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9361941801914709">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="4901406150174669" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="4843969090105416" type="OLD_MovingBrick">
+                                    <param id="0" name="Vector X">OLD_MovingBrick.speed</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="6309653006075651">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="2150860081774625" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-23" name="Move at angle" sid="1714968796353003" type="OLD_MovingBrick">
+                            <param id="0" name="Angle">angle(OLD_MovingBrick.X,OLD_MovingBrick.Y,Player.X,Player.Y)</param>
+                            <param id="1" name="Distance">OLD_MovingBrick.speed</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="3036035126039388">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="60982639849268" type="OLD_MovingBrick">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="5088649175907714" type="OLD_MovingBrick">
+                    <param id="0" name="Instance variable">isGrabbed</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9386080498812596">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="4543201064866121" type="OLD_MovingBrick">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-23" name="Move at angle" sid="6197991264932045" type="OLD_MovingBrick">
+                    <param id="0" name="Angle">angle(OLD_MovingBrick.X,OLD_MovingBrick.Y,Player.X,Player.Y)</param>
+                    <param id="1" name="Distance">-5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8718132481505395">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="9447744900064713" type="Keyboard">
+                    <param id="0" name="Key">32</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-14" name="Toggle boolean" sid="3599639531058473" type="Player">
+                    <param id="0" name="Instance variable">IsWhite</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block disabled="1" sid="917960358647725">
+            <conditions>
+                <condition id="-18" name="On created" sid="671291093769268" type="Player" />
+            </conditions>
+            <actions>
+                <action id="-8" name="Scroll to object" sid="771399678668966" type="System">
+                    <param id="0" name="Object">Player</param>
+                </action>
+                <action id="-28" name="Set canvas size" sid="884544558247343" type="System">
+                    <param id="0" name="Width">Initial_Canvas_Width</param>
+                    <param id="1" name="Height">Initial_Canvas_Height</param>
+                </action>
+                <action id="-16" name="Wait" sid="739811767115438" type="System">
+                    <param id="0" name="Seconds">Dezoom_Duration</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="869772386041973">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="264865870832623" type="BlackPart">
+                    <param id="0" name="Object">Revealer</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Solid" id="0" name="Set enabled" sid="667548054312981" type="BlackPart">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="597664827806238">
+            <conditions>
+                <condition id="-22" name="Else" sid="643614676638280" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Solid" id="0" name="Set enabled" sid="528416497817442" type="BlackPart">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="709530344112478">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="403999072897138" type="Tool_1">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="619184505578003" type="Revealer">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="100229246311324" type="Revealer">
+                    <param id="0" name="Collisions">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="698727429385744" type="Tool_1" />
+            </actions>
+        </event-block>
+        <event-block sid="272762948990125">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="163408380706912" type="Tool_2">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="129448817076381" type="Player">
+                    <param id="0" name="Instance variable">HasTool2</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="347613651080111" type="Tool_2" />
+                <action id="-15" name="Set visible" sid="156421292568570" type="Held_Tool_2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="456540154088339">
+            <conditions>
+                <condition id="-18" name="On created" sid="517223187326306" type="MovingBrick" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="261150598018540" type="MovingBrick">
+                    <param id="0" name="Instance variable">desiredGravity</param>
+                    <param id="1" name="Value">MovingBrick.Platform.Gravity</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="718444107666183">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="875649980012932" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="879990065629221" type="System">
+                    <param id="0" name="Variable">bestDistance</param>
+                    <param id="1" name="Value">500000000000000</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="143366701918971">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="105210076842752" type="Player">
+                    <param id="0" name="Instance variable">HasTool2</param>
+                </condition>
+                <condition id="-11" name="For Each" sid="353020427731301" type="System">
+                    <param id="0" name="Object">MovingBrick</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="327148861265897" type="System">
+                    <param id="0" name="First value">bestDistance</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Second value">distance(MovingBrick.X, MovingBrick.Y, Player.X, Player.Y)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="125269041362243" type="System">
+                    <param id="0" name="Variable">bestDistance</param>
+                    <param id="1" name="Value">distance(MovingBrick.X,MovingBrick.Y,Player.X,Player.Y)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="743256940049757">
+            <conditions>
+                <condition id="-11" name="For Each" sid="900723152766982" type="System">
+                    <param id="0" name="Object">MovingBrick</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="512223316905159">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="128088552676067" type="System">
+                            <param id="0" name="First value">bestDistance</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">distance(MovingBrick.X, MovingBrick.Y, Player.X, Player.Y)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="552575642612729" type="MovingBrick">
+                            <param id="0" name="Instance variable">IsClosest</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="997755216391838">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="751658775177234" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="891628156941323" type="MovingBrick">
+                            <param id="0" name="Instance variable">IsClosest</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="304146959994353">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="731799310731399" type="Keyboard">
+                    <param id="0" name="Key">98</param>
+                </condition>
+                <condition id="-11" name="For Each" sid="897415436990297" type="System">
+                    <param id="0" name="Object">MovingBrick</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="624516517086719" type="MovingBrick">
+                    <param id="0" name="Instance variable">IsClosest</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="627657265006872" type="MovingBrick">
+                    <param id="0" name="Instance variable">IsGrabbed</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action behavior="Platform" id="5" name="Set gravity" sid="862184104061486" type="MovingBrick">
+                    <param id="0" name="Gravity">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="400109038120812">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="401219630883639" type="Player">
+                            <param id="0" name="Instance variable">IsWhite</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="323464435870380" type="MovingBrick">
+                            <param id="0" name="Instance variable">currentSpeed</param>
+                            <param id="1" name="Value">MovingBrick.speed</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="680922445096875">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="670767364222844" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="525013142871869" type="MovingBrick">
+                            <param id="0" name="Instance variable">currentSpeed</param>
+                            <param id="1" name="Value">- MovingBrick.speed</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="506396164949947">
+            <conditions>
+                <condition id="3" name="On key released" sid="742846751465306" type="Keyboard">
+                    <param id="0" name="Key">98</param>
+                </condition>
+                <condition id="-11" name="For Each" sid="338001387921995" type="System">
+                    <param id="0" name="Object">MovingBrick</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="277960973157034" type="MovingBrick">
+                    <param id="0" name="Instance variable">IsGrabbed</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action behavior="Platform" id="5" name="Set gravity" sid="496621730975850" type="MovingBrick">
+                    <param id="0" name="Gravity">MovingBrick.desiredGravity</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="152898519283318">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="287972108300818" type="MovingBrick">
+                    <param id="0" name="Instance variable">IsGrabbed</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="8" name="Set vector X" sid="110897194252529" type="MovingBrick">
+                    <param id="0" name="Vector X">((Player.X - MovingBrick.X) / distance(Player.X,Player.Y,MovingBrick.X,MovingBrick.Y)) * MovingBrick.currentSpeed</param>
+                </action>
+                <action behavior="Platform" id="9" name="Set vector Y" sid="935872883803990" type="MovingBrick">
+                    <param id="0" name="Vector Y">((Player.Y - MovingBrick.Y) / distance(Player.X,Player.Y,MovingBrick.X,MovingBrick.Y)) * MovingBrick.currentSpeed</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="816309960837154">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="690239614723788" type="MovingBrick">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="678097872047686" type="MovingBrick">
+                    <param id="0" name="Instance variable">IsGrabbed</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="619660539005799" type="System">
+                    <param id="0" name="First value">MovingBrick.Y -  Player.Y</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Second value">MovingBrick.Height / 2 + Player.Height /2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="14" name="Log" sid="287954038665685" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;coll&quot;</param>
+                </action>
+                <action behavior="Platform" id="9" name="Set vector Y" sid="883803486541899" type="Player">
+                    <param id="0" name="Vector Y">MovingBrick.Platform.VectorY</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="994049334487871">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="609160328938374" type="Key">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="926442264421529" type="Key" />
+                <action id="-12" name="Subtract from" sid="962299016041351" type="Destination">
+                    <param id="0" name="Instance variable">KeyRequired</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="923618948568677" type="DestinationText">
+                    <param id="0" name="Text">str(Destination.KeyRequired)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="556863484949407">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="526400000714540" type="Destination">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="454391214275117" type="System">
+                    <param id="0" name="First value">Destination.KeyRequired</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-25" name="Go to layout (by name)" sid="420134149777153" type="System">
+                    <param id="0" name="Layout">&quot;WinScreen&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="684820839601590">
+            <conditions>
+                <condition id="-18" name="On created" sid="796756530761600" type="Held_Tool_2" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="237586492957517" type="Held_Tool_2">
+                    <param id="0" name="X">Player.X + 150</param>
+                    <param id="1" name="Y">Player.Y - 100</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="985693063122976" type="Held_Tool_2">
+                    <param id="0" name="Pin to">Player</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="747523783801081">
+            <conditions>
+                <condition id="-18" name="On created" sid="452026752237110" type="DestinationText" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="747934513253393" type="DestinationText">
+                    <param id="0" name="X">Destination.X </param>
+                    <param id="1" name="Y">Destination.Y - 200</param>
+                </action>
+                <action id="0" name="Set text" sid="749068840112074" type="DestinationText">
+                    <param id="0" name="Text">str(Destination.KeyRequired)</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
